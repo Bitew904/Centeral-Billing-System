@@ -1,0 +1,35 @@
+<?php
+{
+mysql_connect('localhost','root','');
+mysql_select_db('bill')or die(mysql_error());
+$query="select * from transfer";
+$run=mysql_query($query);
+echo"<table border='1' width='700'>
+<tr>
+    <th>first_name</th>
+	<th>last_name</th>
+	
+	<th>secretcode</th>
+	<th>branch</th>
+	<th>amountofbirr</th>	
+	<th>phoneNo</th>
+	<th>date</th>
+	<th>service_type</th>
+	
+	
+	</tr>";
+while($row=mysql_fetch_array($run)){
+					echo '<td><div align="left">'.$row['0'].'</div></td>';
+                    echo '<td><div align="left">'.$row['1'].'</div></td>';
+					
+                  echo '<td><div align="left">'.$row[2].'</td>';
+					echo '<td><div align="left">'.$row[3].'</td>';
+					 echo '<td><div align="left">'.$row[4].'</td>';
+					echo '<td><div align="left">'.$row[5].'</td>';
+					 echo '<td><div align="left">'.$row[6].'</td>';
+					 echo '<td><div align="left">'.$row[7].'</td>';
+					// echo '<td><div align="left">'.$row[8].'</td>';					 					
+					 echo '</tr>';					
+	}
+	}
+?>
